@@ -22,7 +22,7 @@ mongoose
     console.log(error);
   });
 //Static Resources
-app.use(express.static("public"));
+
 //View Engine
 app.set("view engine", "ejs");
 
@@ -47,4 +47,7 @@ const userRoutes = require("./routes/users.routes");
 app.use(indexRoutes);
 app.use("/users", userRoutes);
 
+
+app.use(express.static("public"));
+app.use(express.static("customs"));
 module.exports = app;
