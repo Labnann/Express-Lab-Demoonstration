@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 const passport = require("passport");
 
 const getLogin = (req, res) => {
-  res.render("users/login.ejs", { error: req.flash("error") });
+  res.render("users/login.ejs", { error: req.flash("error") , req});
 };
 
 const postLogin = (req, res, next) => {
