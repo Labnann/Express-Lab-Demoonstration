@@ -1,0 +1,72 @@
+<div id="content">
+        <!--name-->
+        <div class="row mb-4">
+            <div class="col">
+                <div class="form-outline">
+                    <input type="text" id="form6Example1" class="form-control" onchange="params.register.name = this.value"/>
+                   Name
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+            <input type="email" id="form6Example5" class="form-control" onchange="params.register.email = this.value"/>
+            <label class="form-label" for="form6Example5">Email</label>
+        </div>
+
+        <!-- Number input -->
+        <div class="form-outline mb-4">
+            <input type="number" id="form6Example6" class="form-control"  onchange="params.register.phone = this.value" />
+            <label class="form-label" for="form6Example6">Phone</label>
+        </div>
+
+        <!-- Category-->
+        <div>
+            Category:
+            <label class="radio-inline-cat">
+                <input type="radio" name="optradio" onclick="params.register.category=1 ">School
+            </label>
+            <label class="radio-inline-cat">
+                <input type="radio" name="optradio" onclick="params.register.category=2">College
+            </label>
+            <label class="radio-inline-cat">
+                <input type="radio" name="optradio" onclick="params.register.category=3" >University
+            </label>
+        </div>
+
+
+
+        <!-- Message input -->
+        <div class="row mb-4">
+
+            <div class="col">
+                <div class="form-outline">
+                    <input type="text" id="institution" class="form-control" />
+                </div>
+                Institution
+            </div>
+
+        </div>
+
+        <!-- Category-->
+        T-Shirt Size
+        <div>
+
+            <label class="radio-inline-ts">
+                <input type="radio" name="ts-radio" onclick="params.register.shirt =1"> L
+            </label>
+            <label class="radio-inline-ts">
+                <input type="radio" name="ts-radio" onclick="params.register.shirt =2"> XL
+            </label>
+            <label class="radio-inline-ts">
+                <input type="radio" name="ts-radio" onclick="params.register.shirt =3"> XXL
+            </label>
+        </div>
+
+        <!-- Submit button -->
+        <button id="math-submit-register" class="btn btn-primary btn-block mb-4">Register</button>
+
+
+</div>
