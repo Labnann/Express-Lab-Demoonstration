@@ -81,10 +81,28 @@ $.find("#programming-register")[0].onclick = showProgrammingContestRegisterPage;
 $.find("#programming-view")[0].onclick = showProgrammingContestViewPage;
 
 const deleteProgrammingContestTeam =(id)=>{
-    $.get(`/math-olympiad/delete/${id}`,(res)=>{
-        if(res.success) showMathOlympiadViewPage();
+    $.get(`/programming-contest/delete/${id}`,(res)=>{
+        if(res.success) showProgrammingContestViewPage();
     });
 
 }
+
+const viewProgrammingContestCurrentEditUser =(id)=> {
+    console.log("Showing...");
+    $("#programming-contest-team-edit").load(`/programming-contest/edit/${id} div#content`,()=>{
+        programmingParams.edit = JSON.parse($.find("#script_programming_team_edit")[0].innerText);
+    });
+
+}
+
+
+const editProgrammingTeam=()=>{
+
+    $.post("/programming-contest/edit",programmingParams.edit,(res)=>{
+        showMathOlympiadViewPage();
+    });
+
+}
+
 
 
