@@ -31,13 +31,13 @@
         Category:
 
         <label class="radio-inline-cat">
-            <input type="radio" name="cat-radio"  onclick="params.edit.category=`School`" <%if(user.category==="School")%> <%="checked"%> >School
+            <input type="radio" name="cat-radio"  onclick="params.edit.category=`School`" <%if(user.category==="School"){%> <%="checked"%> <%}%> >School
         </label>
         <label class="radio-inline-cat">
-            <input type="radio" name="cat-radio" onclick="params.edit.category=`College`" <%if(user.category===`College`)%> <%="checked"%>> College
+            <input type="radio" name="cat-radio" onclick="params.edit.category=`College`" <%if(user.category===`College`){%> <%="checked"%> <%}%> > College
         </label>
         <label class="radio-inline-cat">
-            <input type="radio" name="cat-radio" onclick="params.edit.category=`University`" <%if(user.category===`University`)%> <%="checked"%> >University
+            <input type="radio" name="cat-radio" onclick="params.edit.category=`University`" <%if(user.category===`University`){%> <%="checked"%> <%}%>  >University
         </label>
     </div>
 
@@ -60,13 +60,13 @@
     <div>
 
         <label class="radio-inline-ts">
-            <input type="radio" name="ts-radio" onclick="params.edit.shirt =`L`" <%if(user.shirt===`L`)%> <%="checked"%>  > L
+            <input type="radio" name="ts-radio" onclick="params.edit.shirt =`L`" <%if(user.shirt===`L`){%> <%="checked"%> <%}%>   > L
         </label>
         <label class="radio-inline-ts">
-            <input type="radio" name="ts-radio" onclick="params.edit.shirt =`XL`" <%if(user.shirt===`XL`)%> <%="checked"%> > XL
+            <input type="radio" name="ts-radio" onclick="params.edit.shirt =`XL`" <%if(user.shirt===`XL`){%> <%="checked"%> <%}%>  > XL
         </label>
         <label class="radio-inline-ts">
-            <input type="radio" name="ts-radio" onclick="params.edit.shirt =`XXL`" <%if(user.shirt===`XXL`)%> <%="checked"%> > XXL
+            <input type="radio" name="ts-radio" onclick="params.edit.shirt =`XXL`" <%if(user.shirt===`XXL`){%> <%="checked"%> <%}%>  > XXL
         </label>
     </div>
 
@@ -75,10 +75,10 @@
     <div>
 
         <label class="radio-inline-ts">
-            <input type="radio" name="selection-radio" onclick="params.edit.selected =true" <%if(user.selected===true)%> <%="checked"%> > Yes
+            <input type="radio" name="selection-radio" onclick="params.edit.selected =true" <%if(user.selected===true){%> <%="checked"%> <%}%>  > Yes
         </label>
         <label class="radio-inline-ts">
-            <input type="radio" name="selection-radio" onclick="params.edit.shirt = false" <%if(user.selected===false)%> <%="checked"%>> No
+            <input type="radio" name="selection-radio" onclick="params.edit.shirt = false" <%if(user.selected===false){%> <%="checked"%> <%}%> > No
         </label>
 
     </div>
@@ -88,10 +88,10 @@
     <div>
 
         <label class="radio-inline-ts">
-            <input type="radio" name="payment-radio" onclick="params.edit.paid =true" <%if(user.paid===true)%> <%="checked"%>> Yes
+            <input type="radio" name="payment-radio" onclick="params.edit.paid =true" <%if(user.paid===true){%> <%="checked"%> <%}%> > Yes
         </label>
         <label class="radio-inline-ts">
-            <input type="radio" name="payment-radio" onclick="params.edit.paid = false" <%if(user.paid===false)%> <%="checked"%>> No
+            <input type="radio" name="payment-radio" onclick="params.edit.paid = false" <%if(user.paid===false){%> <%="checked"%> <%}%> > No
         </label>
 
     </div>
@@ -101,6 +101,7 @@
     <div id="script_math_user_edit" hidden>
         <%=JSON.stringify(user)%>
     </div>
+
 
 
 </div>
