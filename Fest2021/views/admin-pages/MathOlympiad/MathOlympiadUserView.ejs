@@ -1,0 +1,47 @@
+<div id="content">
+    <div>
+        <div>Registered Math Olympiad Competitors</div>
+        <div>
+            <table class="table">
+                <thead>
+                <tr class="table-primary">
+                    <th name="name" scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Contact Number</th>
+                    <th name="category" scope="col">Category</th>
+                    <th scope="col">Institution</th>
+                    <th scope="col">T-Shirt</th>
+                    <th scope="col">Registration-Date</th>
+                    <th scope="col">Payment Status</th>
+                    <th scope="col">Selected</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                </thead>
+                <tbody id="math-olympiad-tbody">
+                <% users.forEach((user)=>{
+
+                    console.log("From view", user);
+                %>
+                <tr>
+                    <td><%= user.name %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.phone %></td>
+                    <td><%= user.category %></td>
+                    <td><%= user.institution %></td>
+                    <td><%= user.shirt %></td>
+                    <td><%= user.date %></td>
+                    <td><%= user.paid %></td>
+                    <td><%= user.selected %></td>
+                    <td>Edit</td>
+                    <td>
+                        <button onclick="deleteMathOlympiadUser('<%= user.id %>')">Delete</button>
+                    </td>
+
+                </tr>
+                <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -10,4 +10,9 @@ router.get("/dashboard", ensureAuthenticated, (req, res) => {
   res.render("dashboard.ejs", { user: req.user });
 });
 
+
+
+
+
+
 module.exports = router;

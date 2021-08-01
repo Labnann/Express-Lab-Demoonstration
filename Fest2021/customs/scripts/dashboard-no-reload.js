@@ -1,21 +1,23 @@
-let params = {register: {}}
+let params = {
+    register: {},
+    changeToEditable: ()=>{
+
+    }
+}
 const showMathOlympiadRegisterPage = ()=>{
     $( "#root" ).load( "/html/math-olympiad-form.html div#content" );
     setTimeout(()=>{
+        console.log("clicked");
         $.find("#math-submit-register")[0].onclick = ()=>{
-            console.log("submitting");
+            $.post('/math-olympiad/create',params.register);
         }
     },1000)
 }
 
-K
+
 const showMathOlympiadViewPage = ()=>{
-    $( "#root" ).load( "/html/math-olympiad-form.html div#content" );
-    setTimeout(()=>{
-        $.find("#math-submit-register")[0].onclick = ()=>{
-            console.log("submitting");
-        }
-    },1000)
+    console.log("Showing view page");
+    $( "#root" ).load( "/math-olympiad/view div#content" );
 }
 
 
@@ -23,5 +25,10 @@ $.find("#math-register")[0].onclick = showMathOlympiadRegisterPage;
 $.find("#math-view")[0].onclick = showMathOlympiadViewPage;
 
 
+const deleteMathOlympiadUser =(id)=>{
+    $.get(`/math-olympiad/delete/${id}`,(res)=>{
+        if(res.success) showMathOlympiadViewPage();
+    });
 
+}
 

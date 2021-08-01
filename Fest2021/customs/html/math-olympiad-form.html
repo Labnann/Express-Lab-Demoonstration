@@ -1,4 +1,5 @@
 <div id="content">
+    <h2>Participate in math olympiad</h2>
         <!--name-->
         <div class="row mb-4">
             <div class="col">
@@ -26,13 +27,13 @@
         <div>
             Category:
             <label class="radio-inline-cat">
-                <input type="radio" name="optradio" onclick="params.register.category=1 ">School
+                <input type="radio" name="optradio" onclick="params.register.category=`School` ">School
             </label>
             <label class="radio-inline-cat">
-                <input type="radio" name="optradio" onclick="params.register.category=2">College
+                <input type="radio" name="optradio" onclick="params.register.category=`College`">College
             </label>
             <label class="radio-inline-cat">
-                <input type="radio" name="optradio" onclick="params.register.category=3" >University
+                <input type="radio" name="optradio" onclick="params.register.category=`University`" >University
             </label>
         </div>
 
@@ -43,7 +44,7 @@
 
             <div class="col">
                 <div class="form-outline">
-                    <input type="text" id="institution" class="form-control" />
+                    <input type="text" id="institution" class="form-control" onchange="params.register.institution = this.value" />
                 </div>
                 Institution
             </div>
@@ -55,13 +56,13 @@
         <div>
 
             <label class="radio-inline-ts">
-                <input type="radio" name="ts-radio" onclick="params.register.shirt =1"> L
+                <input type="radio" name="ts-radio" onclick="params.register.shirt =`L`"> L
             </label>
             <label class="radio-inline-ts">
-                <input type="radio" name="ts-radio" onclick="params.register.shirt =2"> XL
+                <input type="radio" name="ts-radio" onclick="params.register.shirt =`XL`"> XL
             </label>
             <label class="radio-inline-ts">
-                <input type="radio" name="ts-radio" onclick="params.register.shirt =3"> XXL
+                <input type="radio" name="ts-radio" onclick="params.register.shirt =`XXL`"> XXL
             </label>
         </div>
 
