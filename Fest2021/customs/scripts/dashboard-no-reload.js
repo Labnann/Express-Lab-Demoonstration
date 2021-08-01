@@ -1,10 +1,10 @@
 let params = {
     register: {},
-    edit:{},
-    changeToEditable: ()=>{
-
-    }
+    edit:{}
 }
+
+/**
+ * Math Olympiad*/
 const showMathOlympiadRegisterPage = ()=>{
     $( "#root" ).load( "/html/math-olympiad-form.html div#content" );
     setTimeout(()=>{
@@ -49,6 +49,35 @@ const editMathUser=()=>{
 
 }
 
+/**
+ * Programming Contest
+ * */
 
+const programmingParams = {
+    register:{
+        coach:{},
+        teamMember1:{},
+        teamMember2:{}
+    }
+}
+
+const showProgrammingContestRegisterPage = ()=>{
+
+    $( "#root" ).load( "/html/programming-contest-form.html div#content" );
+    setTimeout(()=>{
+        console.log("clicked");
+        $.find("#programming-submit-register")[0].onclick = ()=>{
+            $.post('/programming-contest/create',programmingParams.register);
+        }
+    },1000)
+
+}
+
+const showProgrammingContestViewPage = () =>{
+
+}
+
+$.find("#programming-register")[0].onclick = showProgrammingContestRegisterPage;
+$.find("#programming-view")[0].onclick = showProgrammingContestViewPage;
 
 
