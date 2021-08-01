@@ -41,6 +41,13 @@ const viewMathOlympiadCurrentEditUser =(id)=> {
 
 }
 
+const editMathUser=()=>{
+
+    $.post("/math-olympiad/edit",params.edit,(res)=>{
+        showMathOlympiadViewPage();
+    });
+
+}
 
 
 
