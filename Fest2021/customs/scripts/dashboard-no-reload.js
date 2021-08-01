@@ -1,5 +1,6 @@
 let params = {
     register: {},
+    edit:{},
     changeToEditable: ()=>{
 
     }
@@ -31,4 +32,11 @@ const deleteMathOlympiadUser =(id)=>{
     });
 
 }
+
+const viewMathOlympiadCurrentEditUser =(id)=> {
+    console.log("Showing...");
+    $("#math-olympiad-user-edit").load(`/math-olympiad/edit/${id} div#content`);
+
+}
+
 

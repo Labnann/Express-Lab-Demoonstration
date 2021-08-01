@@ -9,7 +9,6 @@ const MathOlympiadUser = require("../models/MathOlympiadUser.model");
 
 const view = (req,res)=>{
     MathOlympiadUser.find().then((users)=>{
-        console.log(users);
         res.render("admin-pages/MathOlympiad/MathOlympiadUserView.ejs",{users})
     });
 
@@ -26,6 +25,18 @@ const deleteUser = (req,res)=>{
         res.json({success: true});
     });
 }
+
+const showEditUser = (req,res)=>{
+
+    MathOlympiadUser.findById(req.params.id,(err)=>{
+        console.log(err);
+    }).then((user)=>{
+        console.log(user);
+        res.render("admin-pages/MathOlympiad/MathOlympiadUserEdit.ejs",{user})
+    });
+}
+
+
 module.exports= {
-    createUser,view,deleteUser
+    createUser,view,deleteUser,showEditUser
 }

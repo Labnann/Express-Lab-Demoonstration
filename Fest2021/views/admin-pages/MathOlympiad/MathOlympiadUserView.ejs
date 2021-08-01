@@ -1,7 +1,8 @@
 <div id="content">
     <div>
+
         <div>Registered Math Olympiad Competitors</div>
-        <div>
+        <div class="math-olympiad-users overlaid">
             <table class="table">
                 <thead>
                 <tr class="table-primary">
@@ -33,7 +34,11 @@
                     <td><%= user.date %></td>
                     <td><%= user.paid %></td>
                     <td><%= user.selected %></td>
-                    <td>Edit</td>
+                    <td>
+                        <button type="button" class="btn btn-primary" onclick="viewMathOlympiadCurrentEditUser('<%= user.id %>')" data-toggle="modal" data-target="#exampleModal">
+                            Edit
+                        </button>
+                    </td>
                     <td>
                         <button onclick="deleteMathOlympiadUser('<%= user.id %>')">Delete</button>
                     </td>
@@ -42,6 +47,39 @@
                 <% }) %>
                 </tbody>
             </table>
+
+
+
+        </div>
+
+    </div>
+
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Math Olympiad Participant</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="math-olympiad-user-edit">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
         </div>
     </div>
+
+
+
 </div>
