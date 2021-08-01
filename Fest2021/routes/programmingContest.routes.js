@@ -1,6 +1,7 @@
 const ensureAuthenticated = require("../middlewares/auth.middleware");
 const router= require("express").Router();
-const programmingContestController = require("../controllers/mathOlympiad.controller");
+const programmingContestController = require("../controllers/programmingContest.controller");
+
 
 router.get("/view",ensureAuthenticated,programmingContestController.view);
 router.post("/create",ensureAuthenticated,programmingContestController.createTeam);
