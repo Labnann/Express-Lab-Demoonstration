@@ -83,5 +83,5 @@ const TeamSchema = new mongoose.Schema({
     }
 });
 
-const MathOlympiadUser = mongoose.model("MathOlympiadUser", TeamSchema);
-module.exports = MathOlympiadUser;
+const Team = mongoose.model("Team", TeamSchema);
+module.exports = Team;
