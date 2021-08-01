@@ -80,4 +80,11 @@ const showProgrammingContestViewPage = () =>{
 $.find("#programming-register")[0].onclick = showProgrammingContestRegisterPage;
 $.find("#programming-view")[0].onclick = showProgrammingContestViewPage;
 
+const deleteProgrammingContestTeam =(id)=>{
+    $.get(`/math-olympiad/delete/${id}`,(res)=>{
+        if(res.success) showMathOlympiadViewPage();
+    });
+
+}
+
 
