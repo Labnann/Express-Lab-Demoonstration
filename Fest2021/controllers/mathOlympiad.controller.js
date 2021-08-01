@@ -1,6 +1,8 @@
 
 const MathOlympiadUser = require("../models/MathOlympiadUser.model");
  const createUser = (req, res) => {
+        req.body.paid = false;
+        req.body.selected=false;
         new MathOlympiadUser(req.body).save().then(res.json({
             success: true
         }));

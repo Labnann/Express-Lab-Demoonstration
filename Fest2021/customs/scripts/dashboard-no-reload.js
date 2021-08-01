@@ -35,8 +35,13 @@ const deleteMathOlympiadUser =(id)=>{
 
 const viewMathOlympiadCurrentEditUser =(id)=> {
     console.log("Showing...");
-    $("#math-olympiad-user-edit").load(`/math-olympiad/edit/${id} div#content`);
+    $("#math-olympiad-user-edit").load(`/math-olympiad/edit/${id} div#content`,()=>{
+        params.edit = JSON.parse($.find("#script_math_user_edit")[0].innerText);
+    });
 
 }
+
+
+
 
 
