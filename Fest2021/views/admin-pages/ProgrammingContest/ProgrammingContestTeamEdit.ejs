@@ -7,21 +7,21 @@
         <div class="col">
             <!-- Name input -->
             <div class="form-outline">
-                <input type="text" id="name_c"  onchange="programmingParams.edit.coach.name=this.value" class="form-control"/>
+                <input type="text" id="name_c" value="<%=team.coach.name%>" onchange="programmingParams.edit.coach.name=this.value" class="form-control"/>
                 <label class="form-label" for="name_c">Name</label>
             </div>
         </div>
         <!-- Phone input -->
         <div class="col">
             <div class="form-outline">
-                <input type="number" id="phone_c" onchange="programmingParams.edit.coach.phone=this.value" class="form-control"/>
+                <input type="number" id="phone_c" value="<%=team.coach.phone%>" onchange="programmingParams.edit.coach.phone=this.value" class="form-control"/>
                 <label class="form-label" for="phone_c">Phone</label>
             </div>
         </div>
         <!-- Email input -->
         <div class="col">
             <div class="form-outline">
-                <input type="email" id="email_c" onchange="programmingParams.edit.coach.email=this.value" class="form-control"/>
+                <input type="email" id="email_c"  value="<%=team.coach.email%>" onchange="programmingParams.edit.coach.email=this.value" class="form-control"/>
                 <label class="form-label" for="email_c">Email address</label>
             </div>
         </div>
@@ -31,7 +31,7 @@
             T-Shirt:
             <div class="form-outline">
                 <label class="radio-inline-ts">
-                    <input type="radio" name="tsc-radio" onclick="programmingParams.edit.coach.shirt =`L`"> L
+                    <input type="radio" name="tsc-radio"  onclick="programmingParams.edit.coach.shirt =`L`"> L
                 </label>
                 <label class="radio-inline-ts">
                     <input type="radio" name="tsc-radio" onclick="programmingParams.edit.coach.shirt =`XL`"> XL
@@ -52,21 +52,21 @@
         <div class="col">
             <!-- Name input -->
             <div class="form-outline">
-                <input type="text" id="name_tl"  onchange="programmingParams.edit.teamLeader.name=this.value" class="form-control"/>
+                <input type="text" id="name_tl"  value="<%=team.teamLeader.name%>" onchange="programmingParams.edit.teamLeader.name=this.value" class="form-control"/>
                 <label class="form-label" for="name_c">Name</label>
             </div>
         </div>
         <!-- Phone input -->
         <div class="col">
             <div class="form-outline">
-                <input type="number" id="phone_tl"  onchange="programmingParams.edit.teamLeader.phone=this.value" class="form-control"/>
+                <input type="number" id="phone_tl"  value="<%=team.teamLeader.phone%>"  onchange="programmingParams.edit.teamLeader.phone=this.value" class="form-control"/>
                 <label class="form-label" for="phone_c">Phone</label>
             </div>
         </div>
         <!-- Email input -->
         <div class="col">
             <div class="form-outline">
-                <input type="email" id="email_tl"  onchange="programmingParams.edit.teamLeader.email=this.value" class="form-control"/>
+                <input type="email" id="email_tl"  value="<%=team.teamLeader.email%>"  onchange="programmingParams.edit.teamLeader.email=this.value" class="form-control"/>
                 <label class="form-label" for="email_c">Email address</label>
             </div>
         </div>
@@ -98,21 +98,21 @@
         <div class="col">
             <!-- Name input -->
             <div class="form-outline">
-                <input type="text" id="name_t1"  onchange="programmingParams.edit.teamMember1.name=this.value" class="form-control"/>
+                <input type="text" id="name_t1"  value="<%=team.teamMember1.name%>"   onchange="programmingParams.edit.teamMember1.name=this.value" class="form-control"/>
                 <label class="form-label" for="name_c">Name</label>
             </div>
         </div>
         <!-- Phone input -->
         <div class="col">
             <div class="form-outline">
-                <input type="number" id="phone_t1"  onchange="programmingParams.edit.teamMember1.phone=this.value" class="form-control"/>
+                <input type="number" id="phone_t1" value="<%=team.teamMember1.phone%>" onchange="programmingParams.edit.teamMember1.phone=this.value" class="form-control"/>
                 <label class="form-label" for="phone_c">Phone</label>
             </div>
         </div>
         <!-- Email input -->
         <div class="col">
             <div class="form-outline">
-                <input type="email" id="email_t1"  onchange="programmingParams.edit.teamMember1.email=this.value" class="form-control"/>
+                <input type="email" id="email_t1"  value="<%=team.teamMember1.email%>" onchange="programmingParams.edit.teamMember1.email=this.value" class="form-control"/>
                 <label class="form-label" for="email_c">Email address</label>
             </div>
         </div>
@@ -143,21 +143,21 @@
         <div class="col">
             <!-- Name input -->
             <div class="form-outline">
-                <input type="text" id="name_t2" onchange="programmingParams.edit.teamMember2.name=this.value" class="form-control"/>
+                <input type="text" id="name_t2" value="<%=team.teamMember2.name%>" onchange="programmingParams.edit.teamMember2.name=this.value" class="form-control"/>
                 <label class="form-label" for="name_c">Name</label>
             </div>
         </div>
         <!-- Phone input -->
         <div class="col">
             <div class="form-outline">
-                <input type="number" id="phone_t2"  onchange="programmingParams.edit.teamMember2.phone=this.value" class="form-control"/>
+                <input type="number" id="phone_t2" value="<%=team.teamMember2.phone%>" onchange="programmingParams.edit.teamMember2.phone=this.value" class="form-control"/>
                 <label class="form-label" for="phone_c">Phone</label>
             </div>
         </div>
         <!-- Email input -->
         <div class="col">
             <div class="form-outline">
-                <input type="email" id="email_t2"  onchange="programmingParams.edit.teamMember2.email=this.value" class="form-control"/>
+                <input type="email" id="email_t2" value="<%=team.teamMember2.email%>" onchange="programmingParams.edit.teamMember2.email=this.value" class="form-control"/>
                 <label class="form-label" for="email_c">Email address</label>
             </div>
         </div>
