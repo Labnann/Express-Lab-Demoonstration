@@ -58,6 +58,12 @@ const programmingParams = {
         teamLeader:{},
         teamMember1:{},
         teamMember2:{}
+    },
+    edit:{
+        coach:{},
+        teamLeader:{},
+        teamMember1:{},
+        teamMember2:{}
     }
 }
 
