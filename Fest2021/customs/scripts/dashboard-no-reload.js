@@ -106,8 +106,8 @@ const viewProgrammingContestCurrentEditUser =(id)=> {
 
 
 const editProgrammingTeam=()=>{
-
-    $.post("/programming-contest/edit",programmingParams.edit,(res)=>{
+    const data =JSON.stringify(programmingParams.edit);
+    $.post("/programming-contest/edit", {data},(res)=>{
         showProgrammingContestViewPage();
     });
 

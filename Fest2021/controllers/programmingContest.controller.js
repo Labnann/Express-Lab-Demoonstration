@@ -45,10 +45,11 @@ const showEditTeam = (req, res)=>{
 }
 
 const editTeam = (req, res)=>{
-    console.log("EDITING WITH",req.body);
-    const id = req.body._id;
-    delete req.body._id;
-    Team.findByIdAndUpdate(id,req.body,{new: true, useFindAndModify:true}).then(value=>{
+    let data = JSON.parse(req.body.data);
+    console.log("EDITING WITH",data);
+    const id = data._id;
+    delete data._id;
+    Team.findByIdAndUpdate(id,data,{new: true, useFindAndModify:true}).then(value=>{
         console.log("Edited",value);
         res.json({success:true});
     });
