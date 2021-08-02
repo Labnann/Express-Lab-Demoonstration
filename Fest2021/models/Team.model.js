@@ -21,6 +21,28 @@ const TeamSchema = new mongoose.Schema({
         }
     },
 
+    teamLeader:{
+        name: {
+            type: String,
+            required: true,
+        },
+        email: {
+            type: String,
+            required: true,
+        },
+
+        phone: {
+            type: String,
+            required: true,
+        },
+
+        shirt: {
+            type: String,
+            required: true,
+        }
+    },
+
+
     teamMember1:{
             name: {
                 type: String,
@@ -72,10 +94,6 @@ const TeamSchema = new mongoose.Schema({
         default:false
     },
 
-    institution:{
-        type: String,
-        required: true
-    },
 
     date: {
         type: Date,

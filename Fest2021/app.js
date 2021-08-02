@@ -50,7 +50,7 @@ const programmingContestRoutes = require("./routes/programmingContest.routes");
 app.use(indexRoutes);
 app.use("/users", userRoutes);
 app.use("/math-olympiad",mathOlympiadRoutes);
-app.use("/programming-contest",mathOlympiadRoutes);
+app.use("/programming-contest",programmingContestRoutes);
 
 
 app.use(express.static("public"));

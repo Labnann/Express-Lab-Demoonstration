@@ -1,0 +1,122 @@
+<div id="content">
+    <div>
+
+        <div>Registered Math Olympiad Competitors</div>
+        <div class="math-olympiad-users overlaid">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th class="table-bordered" colspan="4">Coach Information</th>
+                    <th class="table-bordered" colspan="4">Team Leader Information</th>
+                    <th class="table-bordered" colspan="4">Team Member 1 Information</th>
+                    <th class="table-bordered"  colspan="4">Team Member 2 Information</th>
+                    <th class="table-bordered"  colspan="5">Official Information</th>
+                </tr>
+                <tr class="table-primary">
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Number</th>
+                    <th scope="col">T-Shirt</th>
+
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Number</th>
+                    <th scope="col">T-Shirt</th>
+
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Number</th>
+                    <th scope="col">T-Shirt</th>
+
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Number</th>
+                    <th scope="col">T-Shirt</th>
+
+
+
+                    <th scope="col">Registration-Date</th>
+                    <th scope="col">Payment Status</th>
+                    <th scope="col">Selected</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                </thead>
+                <tbody id="math-olympiad-tbody">
+                <% teams.forEach((team)=>{
+
+                    console.log("From view", team);
+                %>
+                <tr>
+                    <td><%= team.coach.name %></td>
+                    <td><%= team.coach.email %></td>
+                    <td><%= team.coach.phone %></td>
+                    <td><%= team.coach.shirt %></td>
+
+                    <td><%= team.teamLeader.name %></td>
+                    <td><%= team.teamLeader.email %></td>
+                    <td><%= team.teamLeader.phone %></td>
+                    <td><%= team.teamLeader.shirt %></td>
+
+
+                    <td><%= team.teamMember1.name %></td>
+                    <td><%= team.teamMember1.email %></td>
+                    <td><%= team.teamMember1.phone %></td>
+                    <td><%= team.teamMember1.shirt %></td>
+
+                    <td><%= team.teamMember2.name %></td>
+                    <td><%= team.teamMember2.email %></td>
+                    <td><%= team.teamMember2.phone %></td>
+                    <td><%= team.teamMember2.shirt %></td>
+
+                    <td><%= team.date %></td>
+                    <td><%= team.paid %></td>
+                    <td><%= team.selected %></td>
+                    <td>
+                        <button type="button" class="btn btn-primary" onclick="viewProgrammingContestCurrentEditUser('<%= team.id %>')" data-toggle="modal" data-target="#exampleModal">
+                            Edit
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="deleteProgrammingContestTeam('<%= team.id %>')">Delete</button>
+                    </td>
+
+                </tr>
+                <% }) %>
+                </tbody>
+            </table>
+
+
+
+        </div>
+
+    </div>
+
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Math Olympiad Participant</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="math-olympiad-user-edit">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

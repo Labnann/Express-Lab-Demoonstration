@@ -17,7 +17,6 @@ const showMathOlympiadRegisterPage = ()=>{
 
 
 const showMathOlympiadViewPage = ()=>{
-    console.log("Showing view page");
     $( "#root" ).load( "/math-olympiad/view div#content" );
 }
 
@@ -56,6 +55,7 @@ const editMathUser=()=>{
 const programmingParams = {
     register:{
         coach:{},
+        teamLeader:{},
         teamMember1:{},
         teamMember2:{}
     }
@@ -67,13 +67,16 @@ const showProgrammingContestRegisterPage = ()=>{
     setTimeout(()=>{
         console.log("clicked");
         $.find("#programming-submit-register")[0].onclick = ()=>{
-            $.post('/programming-contest/create',programmingParams.register);
+            const data = JSON.stringify(programmingParams.register);
+            $.post('/programming-contest/create', {data});
         }
     },1000)
 
 }
 
 const showProgrammingContestViewPage = () =>{
+    console.log("Loading");
+    $( "#root" ).load( "/programming-contest/view div#content" );
 
 }
 
@@ -99,7 +102,7 @@ const viewProgrammingContestCurrentEditUser =(id)=> {
 const editProgrammingTeam=()=>{
 
     $.post("/programming-contest/edit",programmingParams.edit,(res)=>{
-        showMathOlympiadViewPage();
+        showProgrammingContestViewPage();
     });
 
 }

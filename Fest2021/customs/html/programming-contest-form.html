@@ -42,6 +42,52 @@
     </div>
 
     <hr/>
+    <!---------------------------TEAM Leader------------------------->
+    <h3>Team Leader</h3>
+
+
+    <div class="row">
+        <div class="col">
+            <!-- Name input -->
+            <div class="form-outline">
+                <input type="text" id="name_tl"  onchange="programmingParams.register.teamLeader.name=this.value" class="form-control"/>
+                <label class="form-label" for="name_c">Name</label>
+            </div>
+        </div>
+        <!-- Phone input -->
+        <div class="col">
+            <div class="form-outline">
+                <input type="number" id="phone_tl"  onchange="programmingParams.register.teamLeader.phone=this.value" class="form-control"/>
+                <label class="form-label" for="phone_c">Phone</label>
+            </div>
+        </div>
+        <!-- Email input -->
+        <div class="col">
+            <div class="form-outline">
+                <input type="email" id="email_tl"  onchange="programmingParams.register.teamLeader.email=this.value" class="form-control"/>
+                <label class="form-label" for="email_c">Email address</label>
+            </div>
+        </div>
+
+        <!-- Tshirt input -->
+        <div class="col">
+            T-Shirt:
+            <div class="form-outline">
+                <label class="radio-inline-ts">
+                    <input type="radio" name="tls-radio" onclick="programmingParams.register.teamLeader.shirt =`L`"> L
+                </label>
+                <label class="radio-inline-ts">
+                    <input type="radio" name="tls-radio" onclick="programmingParams.register.teamLeader.shirt =`XL`"> XL
+                </label>
+                <label class="radio-inline-ts">
+                    <input type="radio" name="tls-radio" onclick="programmingParams.register.teamLeader.shirt =`XXL`"> XXL
+                </label>
+            </div>
+        </div>
+    </div>
+    <hr/>
+
+
     <!---------------------------TEAM MEMBER 1------------------------->
     <h3>Team Member 1</h3>
 

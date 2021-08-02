@@ -1,22 +1,28 @@
 
 
 const Team = require("../models/Team.model");
+
+
 const createTeam = (req, res) => {
-    req.body.paid = false;
-    req.body.selected=false;
-    new Team(req.body).save().then(res.json({
+    const data = JSON.parse(req.body.data);
+
+    console.log(data);
+
+    data.paid = false;
+    data.selected=false;
+
+
+
+    new Team(data).save().then(res.json({
         success: true
     }));
 
 };
 
 const view = (req,res)=>{
-    Team.find().then((users)=>{
-        res.render("admin-pages/ProgrammingContest/ProgrammingContestTeamView.ejs",{users})
+    Team.find().then((teams)=>{
+        res.render("admin-pages/ProgrammingContest/ProgrammingContestTeamView.ejs",{teams})
     });
-
-
-
 }
 
 
@@ -32,8 +38,8 @@ const showEditTeam = (req, res)=>{
 
     Team.findById(req.params.id,(err)=>{
         console.log(err);
-    }).then((user)=>{
-        res.render("admin-pages/ProgrammingContest/ProgrammingContestTeamEdit.ejs",{user})
+    }).then((team)=>{
+        res.render("admin-pages/ProgrammingContest/ProgrammingContestTeamEdit.ejs",{team})
     });
 }
 
