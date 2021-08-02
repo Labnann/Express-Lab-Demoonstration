@@ -20,7 +20,6 @@ const createTeam = (req, res) => {
 };
 
 const view = (req,res)=>{
-    console.log("view hit");
     Team.find().then((teams)=>{
         res.render("admin-pages/ProgrammingContest/ProgrammingContestTeamView.ejs",{teams})
     });
@@ -36,6 +35,7 @@ const deleteTeam = (req, res)=>{
 }
 
 const showEditTeam = (req, res)=>{
+    console.log(req.params.id);
 
     Team.findById(req.params.id,(err)=>{
         console.log(err);
