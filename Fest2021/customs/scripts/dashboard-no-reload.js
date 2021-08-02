@@ -8,7 +8,6 @@ let params = {
 const showMathOlympiadRegisterPage = ()=>{
     $( "#root" ).load( "/html/math-olympiad-form.html div#content" );
     setTimeout(()=>{
-        console.log("clicked");
         $.find("#math-submit-register")[0].onclick = ()=>{
             $.post('/math-olympiad/create',params.register);
         }
@@ -33,7 +32,6 @@ const deleteMathOlympiadUser =(id)=>{
 }
 
 const viewMathOlympiadCurrentEditUser =(id)=> {
-    console.log("Showing...");
     $("#math-olympiad-user-edit").load(`/math-olympiad/edit/${id} div#content`,()=>{
         params.edit = JSON.parse($.find("#script_math_user_edit")[0].innerText);
     });
@@ -71,7 +69,6 @@ const showProgrammingContestRegisterPage = ()=>{
 
     $( "#root" ).load( "/html/programming-contest-form.html div#content" );
     setTimeout(()=>{
-        console.log("clicked");
         $.find("#programming-submit-register")[0].onclick = ()=>{
             const data = JSON.stringify(programmingParams.register);
             $.post('/programming-contest/create', {data});
@@ -81,7 +78,6 @@ const showProgrammingContestRegisterPage = ()=>{
 }
 
 const showProgrammingContestViewPage = () =>{
-    console.log("Loading");
     $( "#root" ).load( "/programming-contest/view div#content" );
 
 }
@@ -97,7 +93,6 @@ const deleteProgrammingContestTeam =(id)=>{
 }
 
 const viewProgrammingContestCurrentEditUser =(id)=> {
-    console.log("Showing...");
     $("#programming-contest-team-edit").load(`/programming-contest/edit/${id} div#content`,()=>{
         programmingParams.edit = JSON.parse($.find("#script_programming_team_edit")[0].innerText);
     });

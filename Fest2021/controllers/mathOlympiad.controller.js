@@ -21,7 +21,6 @@ const view = (req,res)=>{
 
 
 const deleteUser = (req,res)=>{
-    console.log("Deleting", req.params.id);
     MathOlympiadUser.findByIdAndRemove(req.params.id,(err)=>{
     }).then(()=>{
         res.json({success: true});
@@ -31,18 +30,16 @@ const deleteUser = (req,res)=>{
 const showEditUser = (req,res)=>{
 
     MathOlympiadUser.findById(req.params.id,(err)=>{
-        console.log(err);
+
     }).then((user)=>{
         res.render("admin-pages/MathOlympiad/MathOlympiadUserEdit.ejs",{user})
     });
 }
 
 const editUser = (req,res)=>{
-    console.log("EDITING WITH",req.body);
     const id = req.body._id;
     delete req.body._id;
     MathOlympiadUser.findByIdAndUpdate(id,req.body,{new: true, useFindAndModify:true}).then(value=>{
-        console.log("Edited",value);
         res.json({success:true});
     });
 

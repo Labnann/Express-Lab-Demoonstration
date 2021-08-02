@@ -6,7 +6,6 @@ const Team = require("../models/Team.model");
 const createTeam = (req, res) => {
     const data = JSON.parse(req.body.data);
 
-    console.log(data);
 
     data.paid = false;
     data.selected=false;
@@ -27,7 +26,6 @@ const view = (req,res)=>{
 
 
 const deleteTeam = (req, res)=>{
-    console.log("Deleting", req.params.id);
     Team.findByIdAndRemove(req.params.id,(err)=>{
     }).then(()=>{
         res.json({success: true});
@@ -35,7 +33,6 @@ const deleteTeam = (req, res)=>{
 }
 
 const showEditTeam = (req, res)=>{
-    console.log(req.params.id);
 
     Team.findById(req.params.id,(err)=>{
         console.log(err);
@@ -46,11 +43,9 @@ const showEditTeam = (req, res)=>{
 
 const editTeam = (req, res)=>{
     let data = JSON.parse(req.body.data);
-    console.log("EDITING WITH",data);
     const id = data._id;
     delete data._id;
     Team.findByIdAndUpdate(id,data,{new: true, useFindAndModify:true}).then(value=>{
-        console.log("Edited",value);
         res.json({success:true});
     });
 
