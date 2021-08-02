@@ -183,6 +183,34 @@
         </div>
     </div>
     <hr/>
+    <hr/>
+
+    <!--Selected-->
+    Selected:
+    <div>
+
+        <label class="radio-inline-ts">
+            <input type="radio" name="selection-radio" onclick="programmingParams.edit.selected =true" <%if(team.selected===true){%> <%="checked"%> <%}%>  > Yes
+        </label>
+        <label class="radio-inline-ts">
+            <input type="radio" name="selection-radio" onclick="programmingParams.edit.shirt = false" <%if(team.selected===false){%> <%="checked"%> <%}%> > No
+        </label>
+
+    </div>
+
+    <!--Paid-->
+    Paid
+    <div>
+
+        <label class="radio-inline-ts">
+            <input type="radio" name="payment-radio" onclick="programmingParams.edit.paid =true" <%if(team.paid===true){%> <%="checked"%> <%}%> > Yes
+        </label>
+        <label class="radio-inline-ts">
+            <input type="radio" name="payment-radio" onclick="programmingParams.edit.paid = false" <%if(team.paid===false){%> <%="checked"%> <%}%> > No
+        </label>
+
+    </div>
+
 
 
 
