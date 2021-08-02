@@ -20,6 +20,7 @@ const createTeam = (req, res) => {
 };
 
 const view = (req,res)=>{
+    console.log("view hit");
     Team.find().then((teams)=>{
         res.render("admin-pages/ProgrammingContest/ProgrammingContestTeamView.ejs",{teams})
     });
