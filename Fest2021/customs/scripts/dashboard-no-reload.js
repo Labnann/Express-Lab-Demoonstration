@@ -64,7 +64,7 @@ const editMathUser=()=>{
  * Programming Contest
  * */
 
-const programmingParams = {
+let programmingParams = {
     register:{
         coach:{},
         teamLeader:{},
