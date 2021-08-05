@@ -1,5 +1,3 @@
-
-
 const Team = require("../models/Team.model");
 
 
@@ -8,58 +6,58 @@ const createTeam = (req, res) => {
 
 
     data.paid = false;
-    data.selected=false;
+    data.selected = false;
 
 
-
-    new Team(data).save().then(res.json({
-        success: true
-    }))
-        .catch(err=>{
-            res.json({success: false})
-        });
+    new Team(data).save().catch(err => {
+        return res.json({success: false})
+    }).then(() => {
+        return res.json({
+            success: true
+        })
+    })
+    ;
 
 };
 
-const view = (req,res)=>{
-    Team.find().then((teams)=>{
-        res.render("admin-pages/ProgrammingContest/ProgrammingContestTeamView.ejs",{teams})
+const view = (req, res) => {
+    Team.find().then((teams) => {
+        return res.render("admin-pages/ProgrammingContest/ProgrammingContestTeamView.ejs", {teams})
     });
 }
 
 
-const deleteTeam = (req, res)=>{
-    Team.findByIdAndRemove(req.params.id,(err)=>{
-    }).then(()=>{
-        res.json({success: true})
-            .catch(err=>{
-                res.json({success: false})
-            });
+const deleteTeam = (req, res) => {
+    Team.findByIdAndRemove(req.params.id, (err) => {
+    }).catch(err => {
+        return res.json({success: false})
+    }).then(() => {
+        return res.json({success: true});
     });
 }
 
-const showEditTeam = (req, res)=>{
+const showEditTeam = (req, res) => {
 
-    Team.findById(req.params.id,(err)=>{
+    Team.findById(req.params.id, (err) => {
         console.log(err);
-    }).then((team)=>{
-        res.render("admin-pages/ProgrammingContest/ProgrammingContestTeamEdit.ejs",{team})
+    }).then((team) => {
+        res.render("admin-pages/ProgrammingContest/ProgrammingContestTeamEdit.ejs", {team})
     });
 }
 
-const editTeam = (req, res)=>{
+const editTeam = (req, res) => {
     let data = JSON.parse(req.body.data);
     const id = data._id;
     delete data._id;
-    Team.findByIdAndUpdate(id,data,{new: true, useFindAndModify:true}).then(value=>{
-        res.json({success:true});
-    }).catch(err=>{
-        res.json({success:false});
+    Team.findByIdAndUpdate(id, data, {new: true, useFindAndModify: true}).catch(err => {
+        return res.json({success: false})
+    }).then(value => {
+        return res.json({success: true});
     });
 
 }
 
 
-module.exports= {
-    createTeam,view,deleteTeam,showEditTeam, editTeam
+module.exports = {
+    createTeam, view, deleteTeam, showEditTeam, editTeam
 }

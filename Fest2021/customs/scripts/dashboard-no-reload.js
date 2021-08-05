@@ -3,6 +3,14 @@ let params = {
     edit:{}
 }
 
+
+const resetParams = ()=>{
+    params = {
+        register: {},
+        edit:{}
+    }
+}
+
 /**
  * Math Olympiad*/
 const showMathOlympiadRegisterPage = ()=>{
@@ -10,7 +18,10 @@ const showMathOlympiadRegisterPage = ()=>{
     setTimeout(()=>{
         $.find("#math-submit-register")[0].onclick = ()=>{
             $.post('/math-olympiad/create',params.register,function (res){
-                if(res.success) window.alert("Success!");
+                if(res.success) {
+                    window.alert("Success!");
+                    resetParams();
+                }
                 else window.alert("Failed");
             });
         }
@@ -75,7 +86,10 @@ const showProgrammingContestRegisterPage = ()=>{
         $.find("#programming-submit-register")[0].onclick = ()=>{
             const data = JSON.stringify(programmingParams.register);
             $.post('/programming-contest/create', {data}, function (res){
-                if(res.success) window.alert("Success!");
+                if(res.success) {
+                    window.alert("Success!");
+                    resetParams();
+                }
                 else window.alert("Failed");
             });
         }
