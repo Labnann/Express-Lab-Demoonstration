@@ -14,7 +14,10 @@ const createTeam = (req, res) => {
 
     new Team(data).save().then(res.json({
         success: true
-    }));
+    }))
+        .catch(err=>{
+            res.json({success: false})
+        });
 
 };
 
@@ -28,7 +31,10 @@ const view = (req,res)=>{
 const deleteTeam = (req, res)=>{
     Team.findByIdAndRemove(req.params.id,(err)=>{
     }).then(()=>{
-        res.json({success: true});
+        res.json({success: true})
+            .catch(err=>{
+                res.json({success: false})
+            });
     });
 }
 
@@ -47,6 +53,8 @@ const editTeam = (req, res)=>{
     delete data._id;
     Team.findByIdAndUpdate(id,data,{new: true, useFindAndModify:true}).then(value=>{
         res.json({success:true});
+    }).catch(err=>{
+        res.json({success:false});
     });
 
 }

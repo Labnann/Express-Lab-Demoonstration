@@ -9,7 +9,10 @@ const showMathOlympiadRegisterPage = ()=>{
     $( "#root" ).load( "/html/math-olympiad-form.html div#content" );
     setTimeout(()=>{
         $.find("#math-submit-register")[0].onclick = ()=>{
-            $.post('/math-olympiad/create',params.register);
+            $.post('/math-olympiad/create',params.register,function (res){
+                if(res.success) window.alert("Success!");
+                else window.alert("Failed");
+            });
         }
     },1000)
 }
@@ -71,7 +74,10 @@ const showProgrammingContestRegisterPage = ()=>{
     setTimeout(()=>{
         $.find("#programming-submit-register")[0].onclick = ()=>{
             const data = JSON.stringify(programmingParams.register);
-            $.post('/programming-contest/create', {data});
+            $.post('/programming-contest/create', {data}, function (res){
+                if(res.success) window.alert("Success!");
+                else window.alert("Failed");
+            });
         }
     },1000)
 

@@ -6,7 +6,10 @@ const MathOlympiadUser = require("../models/MathOlympiadUser.model");
         req.body.selected=false;
         new MathOlympiadUser(req.body).save().then(res.json({
             success: true
-        }));
+        }))
+            .catch(err=>{
+                res.json({success: false})
+            });
 
 };
 
@@ -24,7 +27,10 @@ const deleteUser = (req,res)=>{
     MathOlympiadUser.findByIdAndRemove(req.params.id,(err)=>{
     }).then(()=>{
         res.json({success: true});
-    });
+    })
+        .catch(err=>{
+            res.json({success: false})
+        });
 }
 
 const showEditUser = (req,res)=>{
@@ -33,7 +39,8 @@ const showEditUser = (req,res)=>{
 
     }).then((user)=>{
         res.render("admin-pages/MathOlympiad/MathOlympiadUserEdit.ejs",{user})
-    });
+    })
+    ;
 }
 
 const editUser = (req,res)=>{
@@ -41,7 +48,10 @@ const editUser = (req,res)=>{
     delete req.body._id;
     MathOlympiadUser.findByIdAndUpdate(id,req.body,{new: true, useFindAndModify:true}).then(value=>{
         res.json({success:true});
-    });
+    })
+        .catch(err=>{
+            res.json({success: false})
+        });
 
 }
 
