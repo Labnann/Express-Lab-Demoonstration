@@ -5,6 +5,7 @@ const session = require("express-session");
 const flash = require("connect-flash");
 const mongoose = require("mongoose");
 const passport = require("passport");
+const mailService= require("./services/mail.service");
 
 //Passport Strategy
 require("./config/passport")(passport);
@@ -51,6 +52,8 @@ app.use(indexRoutes);
 app.use("/users", userRoutes);
 app.use("/math-olympiad",mathOlympiadRoutes);
 app.use("/programming-contest",programmingContestRoutes);
+
+mailService.sendMail();
 
 
 app.use(express.static("public"));
