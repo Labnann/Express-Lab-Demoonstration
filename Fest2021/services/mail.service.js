@@ -6,7 +6,7 @@ function createMail(verificationCode) {
     return {
         from: '"PTPT 👻" <ptpt@mail.com>',
         to: "ralor76254@mnqlm.com",
-        subject: "Hello ✔",
+        subject: "Verify your Email Address✔",
         html:
             `<div><b>Hello! Click Here to verify your mail!</b> 
                 <a href ="${process.env.WEB}/verify/${verificationCode}" ></a>
@@ -28,16 +28,18 @@ function createTransporterFromENV() {
 }
 
 // async..await is not allowed in global scope, must use a wrapper
-async function main(verificationCode) {
+async function main(mail) {
 
     let transporter = createTransporterFromENV();
-    let info = await transporter.sendMail(createMail(verificationCode));
+
+    let info = await transporter.sendMail(mail);
     console.log("Message sent: %s", info.messageId);
 }
 
 
 const sendMail = (verificationCode=0)=>{
-    main(verificationCode).catch(console.error);
+    const mail = createMail(verificationCode);
+    main(mail).catch(console.error);
 }
 
 
