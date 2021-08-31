@@ -5,7 +5,7 @@ const session = require("express-session");
 const flash = require("connect-flash");
 const mongoose = require("mongoose");
 const passport = require("passport");
-const mailService= require("./services/mail.service");
+const mailService= require("./services/MailService/mail.service");
 
 //Passport Strategy
 require("./config/passport")(passport);

@@ -25,7 +25,7 @@ async function main(mail) {
 }
 
 
-const sendMail = (mail = {})=>{
+const sendMail = (mail = {to:`test@mailtesttest`})=>{
 
     main(mail).catch(console.error);
 }
