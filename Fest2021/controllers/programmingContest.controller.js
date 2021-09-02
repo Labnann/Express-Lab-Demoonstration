@@ -1,4 +1,5 @@
 const Team = require("../models/Team.model");
+const participationCodeService = require("../services/ParticipationService/participationCode.service")
 
 
 const createTeam = (req, res) => {
@@ -7,11 +8,13 @@ const createTeam = (req, res) => {
 
     data.paid = false;
     data.selected = false;
+    data.participationCode = generateCode(data);
 
 
     new Team(data).save().catch(err => {
         return res.json({success: false})
     }).then(() => {
+        sendSuccessMail(data);
         return res.json({
             success: true
         })
@@ -19,6 +22,21 @@ const createTeam = (req, res) => {
     ;
 
 };
+
+const generateCode = (data)=>{
+    return participationCodeService.generateParticipationCode(
+        data.teamLeader.email +
+        data.teamMember1.email +
+        data.teamMember2.email +
+        data.coach.email);
+}
+
+const sendSuccessMail = (data)=>{
+    participationCodeService.mailCode({code: data.participationCode,to:data.teamMember1.email})
+    participationCodeService.mailCode({code: data.participationCode,to:data.teamMember2.email})
+    participationCodeService.mailCode({code: data.participationCode,to:data.teamLeader.email})
+    participationCodeService.mailCode({code: data.participationCode,to:data.coach.email})
+}
 
 const view = (req, res) => {
     Team.find().then((teams) => {

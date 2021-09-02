@@ -35,11 +35,13 @@ const UserSchema = new mongoose.Schema({
       required: true
     },
 
-
-
     date: {
         type: Date,
         default: Date.now,
+    },
+    participationCode:{
+        type: String,
+        default: "Old Participant"
     }
 });
 

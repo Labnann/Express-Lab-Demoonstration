@@ -3,12 +3,6 @@ const getRegister = (req, res) => {
 };
 
 const postRegister = (req, res) => {
-  //   const username = req.body.username;
-  //   const email = req.body.email;
-  //   //res.sendFile("register.html", { root: "./views/users" });
-  //   res.send(
-  //     `<H1>user with Email - ${email} and Username - ${username} is requesting to login.</H1>`
-  //   );
   res.redirect("/dashboard");
 };
 

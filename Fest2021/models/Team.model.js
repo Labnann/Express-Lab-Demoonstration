@@ -98,6 +98,11 @@ const TeamSchema = new mongoose.Schema({
     date: {
         type: Date,
         default: Date.now,
+    },
+
+    participationCode:{
+        type: String,
+        default: "Old Participant(s)"
     }
 });
 

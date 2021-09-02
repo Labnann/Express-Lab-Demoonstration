@@ -1,11 +1,19 @@
 const MathOlympiadUser = require("../models/MathOlympiadUser.model");
+const participationCodeService = require("../services/ParticipationService/participationCode.service");
+
 const createUser = (req, res) => {
-    req.body.paid = false;
-    req.body.selected = false;
-    new MathOlympiadUser(req.body).save().catch(err => {
+
+    const data= req.body;
+    data.paid = false;
+    data.selected = false;
+    data.participationCode = participationCodeService.generateParticipationCode(data.email);
+
+    new MathOlympiadUser(data).save().catch(err => {
         return res.json({success: false})
     }).then(
         (value) => {
+
+            sendSuccessMail(data);
             return res.json({
                 success: true
             })
@@ -15,8 +23,14 @@ const createUser = (req, res) => {
 
 };
 
+const sendSuccessMail = (data)=>{
+    participationCodeService.mailCode({code: data.participationCode,to:data.email})
+}
+
+
 const view = (req, res) => {
     MathOlympiadUser.find().then((users) => {
+        console.log(users)
         res.render("admin-pages/MathOlympiad/MathOlympiadUserView.ejs", {users})
     });
 
